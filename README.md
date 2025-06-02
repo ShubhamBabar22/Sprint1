@@ -31,7 +31,8 @@ pip install -r requirements.txt
 1. Run the application:
 
 ```bash
-python app.py
+python manage.py runserver
+
 ```
 
 2. Open your web browser and go to `http://127.0.0.1:5000/`
@@ -39,26 +40,10 @@ python app.py
 
 ## Technologies Used
 
-- **Backend**: Python, Flask, SQLite3
+- **Backend**: Python, Django, MYSQL
 - **Frontend**: HTML, CSS, Font Awesome
-- **Database**: SQLite
+- **Database**: MYSQL
 
-## Project Structure
-
-```
-task_manager/
-├── app.py                  # Main Flask application
-├── task_manager.db         # SQLite database (created automatically)
-├── requirements.txt        # Python dependencies
-├── static/
-│   └── css/
-│       └── style.css       # CSS styles
-└── templates/
-    ├── base.html           # Base template
-    ├── index.html          # Home page with task list
-    ├── add.html            # Add task form
-    └── edit.html           # Edit task form
-```
 
 ## Contributing
 
