@@ -1,0 +1,315 @@
+/*
+ * Styles for profile.html
+ * This file contains all custom styles for the profile page.
+ * Linked from the template for separation of concerns and maintainability.
+ */
+
+/* Profile Styles
+ * This file contains styles specific to the user profile page.
+ * It includes styles for user information, statistics cards, and activity feed.
+ */
+
+/* Main Container Styles */
+/* Styles for the main profile container */
+.container {
+    /* Sets maximum width for content */
+    max-width: 1200px;
+    /* Centers the container */
+    margin: 0 auto;
+    /* Adds vertical padding */
+    padding: 2rem 1rem;
+}
+
+/* Profile Section Styles */
+/* Styles for the user profile information card */
+.profile-section {
+    /* Adds subtle shadow */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    /* Rounds the corners */
+    border-radius: 0.5rem;
+    /* Removes default border */
+    border: none;
+    /* Sets transition for hover effect */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Profile Avatar Styles */
+/* Styles for the user avatar icon */
+.profile-avatar {
+    /* Sets icon color */
+    color: #0d6efd;
+    /* Sets icon size */
+    font-size: 4rem;
+    /* Adds margin below */
+    margin-bottom: 1.5rem;
+}
+
+/* User Info Styles */
+/* Styles for user information display */
+.user-info {
+    /* Adds padding */
+    padding: 1.5rem;
+    /* Sets background color */
+    background-color: #f8f9fa;
+    /* Rounds the corners */
+    border-radius: 0.5rem;
+}
+
+/* Statistics Cards Styles */
+/* Styles for task statistics cards */
+.card {
+    /* Adds subtle shadow */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    /* Rounds the corners */
+    border-radius: 0.5rem;
+    /* Removes default border */
+    border: none;
+    /* Sets transition for hover effect */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Card hover effect */
+.card:hover {
+    /* Slightly lifts the card on hover */
+    transform: translateY(-2px);
+}
+
+/* Statistics Icon Styles */
+/* Styles for icons in statistics cards */
+.fa-3x {
+    /* Sets icon size */
+    font-size: 3rem;
+    /* Sets opacity */
+    opacity: 0.9;
+    /* Adds margin below */
+    margin-bottom: 1rem;
+}
+
+/* Progress Bar Styles */
+/* Styles for the task completion progress bar */
+.progress {
+    /* Sets height */
+    height: 1.5rem;
+    /* Sets background color */
+    background-color: #e9ecef;
+    /* Rounds the corners */
+    border-radius: 0.375rem;
+    /* Adds margin below */
+    margin-bottom: 1rem;
+}
+
+/* Progress Bar Fill Styles */
+/* Styles for the filled portion of the progress bar */
+.progress-bar {
+    /* Sets background color */
+    background-color: #28a745;
+    /* Sets text color */
+    color: #fff;
+    /* Sets font weight */
+    font-weight: 600;
+    /* Centers text */
+    text-align: center;
+    /* Sets line height */
+    line-height: 1.5rem;
+}
+
+/* Activity List Styles */
+/* Styles for the recent activity list */
+.list-group {
+    /* Removes default border */
+    border: none;
+}
+
+/* Activity Item Styles */
+/* Styles for individual activity items */
+.list-group-item {
+    /* Adds padding */
+    padding: 1rem;
+    /* Removes border */
+    border: none;
+    /* Adds bottom border */
+    border-bottom: 1px solid #e9ecef;
+    /* Sets transition */
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Activity Item Hover Styles */
+/* Styles for when activity items are hovered */
+.list-group-item:hover {
+    /* Sets background color */
+    background-color: #f8f9fa;
+}
+
+/* Empty State Styles */
+/* Styles for when no activities are available */
+.text-center {
+    /* Adds padding */
+    padding: 3rem 1rem;
+}
+
+/* Empty State Icon Styles */
+/* Styles for the icon in empty state */
+.fa-3x {
+    /* Sets color */
+    color: #dee2e6;
+    /* Sets margin */
+    margin-bottom: 1rem;
+}
+
+/* Responsive Styles */
+/* Adjusts layout for different screen sizes */
+@media (max-width: 768px) {
+    /* Adjusts card padding on mobile */
+    .card-body {
+        padding: 1rem;
+    }
+    
+    /* Makes statistics cards stack on mobile */
+    .col-md-4 {
+        margin-bottom: 1rem;
+    }
+    
+    /* Adjusts profile section for mobile */
+    .profile-section {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #004494);
+}
+
+.btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    background: linear-gradient(45deg, #6c757d, #5a6268);
+    border-color: transparent;
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .profile-section, .card {
+        margin-bottom: 1.5rem;
+    }
+    .progress-wrapper {
+        padding: 12px;
+    }
+}
+
+/* Modern Profile Page Styles */
+
+.profile-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    padding: 2rem 1.5rem;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-avatar {
+    color: #1976d2;
+    font-size: 4rem;
+    margin-bottom: 1.2rem;
+}
+
+.stats-row {
+    margin-bottom: 0.5rem;
+}
+
+.stats-card {
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    padding: 1.2rem 0.5rem 0.8rem 0.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    min-width: 110px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.stats-total {
+    background: linear-gradient(135deg, #007bff 60%, #0056b3 100%);
+}
+.stats-completed {
+    background: linear-gradient(135deg, #28a745 60%, #218838 100%);
+}
+.stats-pending {
+    background: linear-gradient(135deg, #ffc107 60%, #ff9800 100%);
+    color: #222;
+}
+.stats-overdue {
+    background: linear-gradient(135deg, #dc3545 60%, #b52a37 100%);
+}
+
+.stats-card i {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.profile-progress {
+    height: 1.5rem;
+    border-radius: 0.5rem;
+    background: #e9ecef;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+.profile-progress .progress-bar {
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+}
+
+.progress-text {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .profile-card, .card {
+        min-height: unset;
+    }
+    .stats-card {
+        min-width: 90px;
+        min-height: 90px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-card, .card {
+        min-height: unset;
+        margin-bottom: 1.5rem;
+    }
+    .stats-row {
+        flex-wrap: wrap;
+    }
+    .stats-card {
+        min-width: 100%;
+        margin-bottom: 1rem;
+    }
+} 

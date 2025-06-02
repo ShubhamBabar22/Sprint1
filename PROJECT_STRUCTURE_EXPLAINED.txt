@@ -1,0 +1,80 @@
+Django Task Manager Project Structure Explained
+=============================================
+
+This document explains the structure of the Django-based Task Manager project, describing the purpose of each main directory and file, and how they fit together to form the application.
+
+Project Root
+------------
+- manage.py
+    The command-line utility for interacting with the Django project (runserver, migrations, shell, etc.).
+- PROJECT_STRUCTURE_EXPLAINED.txt
+    This documentation file.
+
+Main Directories
+----------------
+- taskmanager/
+    The main Django project directory. Contains project-wide settings, URLs, and WSGI/ASGI configuration.
+    - __init__.py: Marks this directory as a Python package.
+    - settings.py: Project settings (database, installed apps, static files, etc.).
+    - urls.py: Root URL configuration, includes app URLs.
+    - wsgi.py: WSGI entry point for deployment.
+    - asgi.py: ASGI entry point for asynchronous servers.
+
+- tasks/
+    The core Django app for task management. Contains all business logic, models, views, forms, and templates for tasks.
+    - __init__.py: Marks this directory as a Python package.
+    - admin.py: Admin interface configuration for the Task model.
+    - apps.py: App configuration.
+    - forms.py: Django forms for task creation, editing, registration, and login.
+    - models.py: Database models (Task, etc.).
+    - urls.py: URL patterns for task-related views.
+    - views.py: View functions/classes for handling requests and rendering templates.
+    - exceptions.py: Custom exception classes for task-related errors.
+    - templates/tasks/
+        Contains all HTML templates for the app:
+        - base.html: Base template with common layout (navbar, footer, etc.).
+        - home.html: Landing page for the app.
+        - dashboard.html: User dashboard with task stats and quick actions.
+        - profile.html: User profile and statistics.
+        - login.html: Login form.
+        - register.html: Registration form.
+        - task_list.html: List of all tasks for the user.
+        - task_form.html: Form for creating/editing a task.
+        - task_detail.html: Detailed view of a single task.
+        - task_confirm_delete.html: Confirmation page for deleting a task.
+
+Static Files
+------------
+- static/
+    Contains all static assets (CSS, JS, images) used by the project.
+    - css/
+        - base.css: Common styles for the whole site.
+        - home.css: Styles for the home page.
+        - dashboard.css: Styles for the dashboard.
+        - profile.css: Styles for the profile page.
+        - login.css: Styles for the login page.
+        - register.css: Styles for the registration page.
+        - task_list.css: Styles for the task list page.
+        - task_form.css: Styles for the task form page.
+        - task_detail.css: Styles for the task detail page.
+        - task_confirm_delete.css: Styles for the delete confirmation page.
+
+Other Files
+-----------
+- db.sqlite3 (or your chosen database file)
+    The SQLite database file (or your configured database).
+- requirements.txt
+    Lists Python dependencies for the project (Django, etc.).
+- README.md
+    Project overview, setup instructions, and usage notes.
+
+How It Fits Together
+--------------------
+- The user interacts with the app via HTML templates rendered by Django views in the `tasks` app.
+- URLs are routed from `taskmanager/urls.py` to `tasks/urls.py`, which maps to specific views.
+- Forms handle user input for authentication and task management.
+- Models define the structure of the data stored in the database.
+- Static files provide styling and interactivity.
+- Custom exceptions in `exceptions.py` help with error handling and user feedback.
+
+This modular structure makes the project easy to maintain, extend, and understand. 

@@ -1,0 +1,84 @@
+How to Set Up MySQL Database for the Django Task Manager Project
+==============================================================
+
+Follow these steps to configure your Django project to use a MySQL database instead of SQLite:
+
+1. Install MySQL Server
+-----------------------
+- Download and install MySQL Community Server from https://dev.mysql.com/downloads/mysql/
+- During installation, set a root password and remember it.
+
+2. Create a MySQL Database and User
+-----------------------------------
+- Open the MySQL command line or a tool like MySQL Workbench.
+- Log in as root:
+  ```
+  mysql -u root -p
+  ```
+- Create a new database (replace `taskmanager_db` with your preferred name):
+  ```
+  CREATE DATABASE taskmanager_db CHARACTER SET UTF8MB4;
+  ```
+- (Optional) Create a dedicated user and grant privileges:
+  ```
+  CREATE USER 'taskuser'@'localhost' IDENTIFIED BY 'yourpassword';
+  GRANT ALL PRIVILEGES ON taskmanager_db.* TO 'taskuser'@'localhost';
+  FLUSH PRIVILEGES;
+  ```
+
+3. Install MySQL Client for Python
+----------------------------------
+- Activate your virtual environment in VS Code.
+- Install the `mysqlclient` package:
+  ```
+  pip install mysqlclient
+  ```
+- If you encounter issues, make sure you have MySQL development headers installed (on Windows, use the official installer; on Linux, install `libmysqlclient-dev`).
+
+4. Update Django Database Settings
+----------------------------------
+- Open `taskmanager/settings.py`.
+- Find the `DATABASES` section and update it as follows:
+  ```python
+  DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.mysql',
+          'NAME': 'taskmanager_db',           # Your database name
+          'USER': 'taskuser',                 # Your MySQL username
+          'PASSWORD': 'yourpassword',         # Your MySQL password
+          'HOST': 'localhost',                # Or your DB host
+          'PORT': '3306',                     # Default MySQL port
+      }
+  }
+  ```
+
+5. Apply Migrations to MySQL
+----------------------------
+- In the terminal, run:
+  ```
+  python manage.py makemigrations
+  python manage.py migrate
+  ```
+- This will create the necessary tables in your MySQL database.
+
+6. Create a Superuser (if needed)
+---------------------------------
+- If you haven't already:
+  ```
+  python manage.py createsuperuser
+  ```
+
+7. Run the Server
+-----------------
+- Start the development server:
+  ```
+  python manage.py runserver
+  ```
+- Your Django project is now using MySQL as its database backend.
+
+Troubleshooting
+---------------
+- If you get `django.db.utils.OperationalError`, check your database credentials and that MySQL is running.
+- If you get `ModuleNotFoundError: No module named 'MySQLdb'`, ensure `mysqlclient` is installed in your virtual environment.
+
+That's it! Your Django Task Manager project is now configured to use MySQL. 

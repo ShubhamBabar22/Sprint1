@@ -1,0 +1,176 @@
+/* Login Styles
+ * This file contains styles specific to the login page.
+ * It includes styles for the login form, input fields, and buttons.
+ */
+
+/* Main Container Styles */
+/* Styles for the main login container */
+.container {
+    /* Sets maximum width for content */
+    max-width: 1200px;
+    /* Centers the container */
+    margin: 0 auto;
+    /* Adds vertical padding */
+    padding: 2rem 1rem;
+}
+
+/* Login Card Styles */
+/* Styles for the login form card */
+.card {
+    /* Adds subtle shadow */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    /* Rounds the corners */
+    border-radius: 0.5rem;
+    /* Removes default border */
+    border: none;
+    /* Sets transition for hover effect */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Card Header Styles */
+/* Styles for the card header containing the title */
+.card-header {
+    /* Adds padding */
+    padding: 1.5rem;
+    /* Sets background color */
+    background-color: #fff;
+    /* Removes bottom border */
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Card Title Styles */
+/* Styles for the login title */
+.card-header h4 {
+    /* Sets font size */
+    font-size: 1.5rem;
+    /* Sets font weight */
+    font-weight: 600;
+    /* Sets text color */
+    color: #212529;
+}
+
+/* Form Styles */
+/* Styles for the login form */
+.form-label {
+    /* Sets font weight */
+    font-weight: 500;
+    /* Sets text color */
+    color: #495057;
+    /* Adds margin below */
+    margin-bottom: 0.5rem;
+}
+
+/* Input Group Styles */
+/* Styles for input fields with icons */
+.input-group {
+    /* Sets margin below */
+    margin-bottom: 1rem;
+}
+
+/* Input Group Text Styles */
+/* Styles for the icon container in input groups */
+.input-group-text {
+    /* Sets background color */
+    background-color: #f8f9fa;
+    /* Sets border color */
+    border-color: #ced4da;
+    /* Sets text color */
+    color: #6c757d;
+}
+
+/* Form Control Styles */
+/* Styles for input fields */
+.form-control {
+    /* Sets height */
+    height: 2.5rem;
+    /* Sets padding */
+    padding: 0.5rem 1rem;
+    /* Sets border color */
+    border-color: #ced4da;
+    /* Rounds the corners */
+    border-radius: 0.375rem;
+    /* Sets transition */
+    transition: border-color 0.2s ease-in-out;
+}
+
+/* Form Control Focus Styles */
+/* Styles for when input fields are focused */
+.form-control:focus {
+    /* Sets border color */
+    border-color: #80bdff;
+    /* Sets box shadow */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.15);
+}
+
+/* Button Styles */
+/* Styles for the login button */
+.btn-primary {
+    /* Sets background color */
+    background-color: #0d6efd;
+    /* Sets border color */
+    border-color: #0d6efd;
+    /* Sets text color */
+    color: #fff;
+    /* Sets font weight */
+    font-weight: 500;
+    /* Sets padding */
+    padding: 0.5rem 1rem;
+    /* Rounds the corners */
+    border-radius: 0.375rem;
+    /* Sets transition */
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Button Hover Styles */
+/* Styles for when the button is hovered */
+.btn-primary:hover {
+    /* Sets background color */
+    background-color: #0b5ed7;
+    /* Sets border color */
+    border-color: #0a58ca;
+}
+
+/* Card Footer Styles */
+/* Styles for the card footer containing links */
+.card-footer {
+    /* Sets background color */
+    background-color: #fff;
+    /* Sets border color */
+    border-top: 1px solid #e9ecef;
+    /* Adds padding */
+    padding: 1rem;
+}
+
+/* Link Styles */
+/* Styles for the registration and password reset links */
+.text-primary {
+    /* Sets text color */
+    color: #0d6efd;
+    /* Sets text decoration */
+    text-decoration: none;
+    /* Sets transition */
+    transition: color 0.2s ease-in-out;
+}
+
+/* Link Hover Styles */
+/* Styles for when links are hovered */
+.text-primary:hover {
+    /* Sets text color */
+    color: #0a58ca;
+    /* Sets text decoration */
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+/* Adjusts layout for different screen sizes */
+@media (max-width: 768px) {
+    /* Adjusts card padding on mobile */
+    .card-body {
+        padding: 1rem;
+    }
+    
+    /* Adjusts button size on mobile */
+    .btn-primary {
+        padding: 0.375rem 0.75rem;
+    }
+} 

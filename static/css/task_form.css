@@ -1,0 +1,192 @@
+/*
+ * Styles for task_form.html
+ * This file contains all custom styles for the task form page.
+ * Linked from the template for separation of concerns and maintainability.
+ */
+
+/* Task Form Styles
+ * This file contains styles specific to the task creation and editing form.
+ * It uses Bootstrap's utility classes and custom styles for a clean, modern look.
+ */
+
+/* Form Container Styles */
+/* Styles for the main form container and its spacing */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Card Styles */
+/* Styles for the form card container */
+.card {
+    /* Adds a subtle shadow for depth */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    /* Rounds the corners */
+    border-radius: 0.5rem;
+    /* Removes default border */
+    border: none;
+}
+
+/* Card Header Styles */
+/* Styles for the header section containing title and back button */
+.card-header {
+    /* Adds padding to the header */
+    padding: 1.5rem;
+    /* Sets white background */
+    background-color: #fff;
+    /* Removes default border */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* Form Title Styles */
+/* Styles for the form title */
+.card-header h3 {
+    /* Sets font size */
+    font-size: 1.5rem;
+    /* Removes bottom margin */
+    margin-bottom: 0;
+    /* Sets font weight */
+    font-weight: 600;
+}
+
+/* Form Body Styles */
+/* Styles for the main form content area */
+.card-body {
+    /* Adds padding around form content */
+    padding: 2rem;
+}
+
+/* Form Field Styles */
+/* Styles for form input fields and labels */
+.form-label {
+    /* Sets font weight for labels */
+    font-weight: 600;
+    /* Adds margin below labels */
+    margin-bottom: 0.5rem;
+    /* Sets text color */
+    color: #495057;
+}
+
+.form-control {
+    /* Adds padding to input fields */
+    padding: 0.75rem 1rem;
+    /* Sets border color */
+    border-color: #ced4da;
+    /* Rounds the corners */
+    border-radius: 0.375rem;
+    /* Sets transition for smooth focus effect */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Form Control Focus Styles */
+/* Styles for when form fields are focused */
+.form-control:focus {
+    /* Changes border color on focus */
+    border-color: #80bdff;
+    /* Adds a subtle blue glow */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Select Field Styles */
+/* Styles for dropdown select fields */
+.form-select {
+    /* Matches the style of text inputs */
+    padding: 0.75rem 1rem;
+    border-color: #ced4da;
+    border-radius: 0.375rem;
+    /* Adds a custom dropdown arrow */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px 12px;
+}
+
+/* Textarea Styles */
+/* Styles for the description textarea */
+textarea.form-control {
+    /* Sets minimum height */
+    min-height: 100px;
+    /* Allows vertical resizing */
+    resize: vertical;
+}
+
+/* Button Styles */
+/* Styles for form action buttons */
+.btn {
+    /* Adds padding to buttons */
+    padding: 0.75rem 1.5rem;
+    /* Sets font weight */
+    font-weight: 500;
+    /* Rounds the corners */
+    border-radius: 0.375rem;
+    /* Sets transition for hover effects */
+    transition: all 0.15s ease-in-out;
+}
+
+/* Primary Button Styles */
+/* Styles for the submit button */
+.btn-primary {
+    /* Sets background color */
+    background-color: #0d6efd;
+    /* Sets border color */
+    border-color: #0d6efd;
+    /* Sets text color */
+    color: #fff;
+}
+
+/* Primary Button Hover Styles */
+/* Styles for when primary button is hovered */
+.btn-primary:hover {
+    /* Darkens background on hover */
+    background-color: #0b5ed7;
+    /* Darkens border on hover */
+    border-color: #0a58ca;
+}
+
+/* Secondary Button Styles */
+/* Styles for the back button */
+.btn-outline-secondary {
+    /* Sets text and border color */
+    color: #6c757d;
+    border-color: #6c757d;
+    /* Sets transparent background */
+    background-color: transparent;
+}
+
+/* Secondary Button Hover Styles */
+/* Styles for when secondary button is hovered */
+.btn-outline-secondary:hover {
+    /* Changes text color on hover */
+    color: #fff;
+    /* Changes background color on hover */
+    background-color: #6c757d;
+    /* Changes border color on hover */
+    border-color: #6c757d;
+}
+
+/* Error Message Styles */
+/* Styles for form validation error messages */
+.invalid-feedback {
+    /* Sets text color for errors */
+    color: #dc3545;
+    /* Sets font size */
+    font-size: 0.875rem;
+    /* Adds margin above error message */
+    margin-top: 0.25rem;
+}
+
+/* Responsive Styles */
+/* Adjusts layout for different screen sizes */
+@media (max-width: 768px) {
+    /* Reduces padding on mobile */
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    /* Makes buttons full width on mobile */
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+} 

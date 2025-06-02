@@ -1,0 +1,125 @@
+{% extends 'tasks/base.html' %}
+{% load static %}
+
+{% block title %}{% if form.instance.pk %}Edit Task{% else %}New Task{% endif %} - Task Manager{% endblock %}
+
+{% block content %}
+<!-- Main Container -->
+<!-- This container provides padding and centers the form on the page -->
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <!-- Form Column: Takes up 8 columns on medium screens and above -->
+        <div class="col-md-8">
+            <!-- Task Form Card -->
+            <!-- Card with shadow and rounded corners for visual appeal -->
+            <div class="card shadow-lg border-0 rounded-lg">
+                <!-- Card Header -->
+                <!-- Contains the title and back button, with white background -->
+                <div class="card-header bg-white py-4">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <!-- Dynamic Title -->
+                        <!-- Changes based on whether we're editing or creating a task -->
+                        <h3 class="mb-0">
+                            <!-- Dynamic Icon -->
+                            <!-- Shows edit icon for editing, plus icon for new tasks -->
+                            <i class="fas {% if form.instance.pk %}fa-edit text-primary{% else %}fa-plus text-success{% endif %} me-2"></i>
+                            {% if form.instance.pk %}Edit Task{% else %}New Task{% endif %}
+                        </h3>
+                        <!-- Back Button -->
+                        <!-- Returns user to dashboard -->
+                        <a href="{% url 'dashboard' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Body -->
+                <!-- Contains the actual form with padding -->
+                <div class="card-body p-4">
+                    <!-- Task Form -->
+                    <!-- Form uses POST method and includes CSRF protection -->
+                    <form method="post" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        <div class="row g-4">
+                            <!-- Title Field -->
+                            <!-- Required field for task name with validation -->
+                            <div class="col-12">
+                                <label for="id_title" class="form-label fw-semibold mb-1">Title</label>
+                                <input type="text" name="title" class="form-control" id="id_title" 
+                                       value="{{ form.title.value|default_if_none:'' }}"
+                                       placeholder="Enter task title">
+                                <!-- Error Display -->
+                                <!-- Shows validation errors if any -->
+                                {% if form.title.errors %}
+                                    <div class="invalid-feedback d-block">{{ form.title.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Description Field -->
+                            <!-- Optional field for detailed task information -->
+                            <div class="col-12">
+                                <label for="id_description" class="form-label fw-semibold mb-1">Description</label>
+                                <textarea name="description" class="form-control" id="id_description" 
+                                          rows="4" placeholder="Enter task description">{{ form.description.value|default_if_none:'' }}</textarea>
+                                {% if form.description.errors %}
+                                    <div class="invalid-feedback d-block">{{ form.description.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Priority Field -->
+                            <!-- Dropdown for selecting task priority level -->
+                            <div class="col-md-6">
+                                <label for="id_priority" class="form-label fw-semibold mb-1">Priority</label>
+                                <select name="priority" class="form-select" id="id_priority">
+                                    <!-- Dynamic Options -->
+                                    <!-- Loops through priority choices defined in the form -->
+                                    {% for value, label in form.fields.priority.choices %}
+                                        <option value="{{ value }}" {% if form.priority.value == value %}selected{% endif %}>{{ label }}</option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.priority.errors %}
+                                    <div class="invalid-feedback d-block">{{ form.priority.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Due Date Field -->
+                            <!-- Date picker for task deadline with minimum date validation -->
+                            <div class="col-md-6">
+                                <label for="id_due_date" class="form-label fw-semibold mb-1">Due Date</label>
+                                <input type="date" name="due_date" class="form-control" id="id_due_date" 
+                                       value="{{ form.due_date.value|default_if_none:'' }}"
+                                       min="{{ min_date|date:'Y-m-d' }}">
+                                {% if form.due_date.errors %}
+                                    <div class="invalid-feedback d-block">{{ form.due_date.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <!-- Dynamic button text based on whether editing or creating -->
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas {% if form.instance.pk %}fa-save{% else %}fa-plus{% endif %} me-2"></i>
+                                {% if form.instance.pk %}Save Changes{% else %}Create Task{% endif %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<!-- Custom CSS for task form styling -->
+<link rel="stylesheet" href="{% static 'css/task_form.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<!-- No additional JavaScript required as we're using manual form rendering -->
+<script>
+    // Form validation is handled by Bootstrap's built-in validation
+    // and Django's form validation on the server side
+</script>
+{% endblock %} 

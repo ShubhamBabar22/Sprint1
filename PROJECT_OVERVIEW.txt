@@ -1,0 +1,47 @@
+Django Task Manager Project - Overview
+=====================================
+
+What is this project?
+---------------------
+The Django Task Manager is a web-based application designed to help individuals and teams organize, track, and manage their daily tasks efficiently. Built using the Django web framework, it provides a modern, user-friendly interface for creating, editing, and monitoring tasks.
+
+Who is it for?
+--------------
+- Individuals who want to manage personal to-do lists and deadlines
+- Students who need to track assignments and projects
+- Professionals and teams who want to collaborate on tasks and monitor progress
+- Anyone looking for a simple, effective task management solution
+
+Main Features
+-------------
+- User registration, login, and profile management
+- Dashboard with task statistics and quick actions
+- Create, edit, and delete tasks
+- Set task priorities (High, Medium, Low) and due dates
+- Mark tasks as completed
+- View detailed information for each task
+- Filter and sort tasks by status, priority, and due date
+- Visual progress bar for task completion rate
+- Responsive design for desktop and mobile use
+- Secure authentication and user-specific data
+
+How does it work?
+-----------------
+- Users register and log in to access their personal dashboard.
+- The dashboard provides an overview of all tasks, including statistics for completed, pending, and overdue tasks.
+- Users can add new tasks, set priorities, and assign due dates.
+- Each task can be viewed in detail, edited, marked as complete, or deleted.
+- The profile page shows user information and task completion progress.
+- All data is securely stored in a database (SQLite by default, with MySQL support available).
+- The application uses Django's robust backend for data management and security, and Bootstrap for a clean, modern UI.
+
+Why use this project?
+---------------------
+- Easy to set up and run locally or on a server
+- Clean, intuitive interface for managing tasks
+- Modular and well-documented codebase for easy customization
+- Suitable for both personal and small team use
+
+Summary
+-------
+The Django Task Manager is a practical, extensible solution for anyone who wants to stay organized and productive. Whether you're managing homework, work projects, or daily chores, this app provides all the essential tools to keep your tasks on track. 

@@ -1,0 +1,124 @@
+/*
+ * Styles for task_detail.html
+ * This file contains all custom styles for the task detail page.
+ * Linked from the template for separation of concerns and maintainability.
+ */
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.badge {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+}
+
+.bg-low-subtle {
+    background-color: #e3f2fd;
+}
+
+.bg-medium-subtle {
+    background-color: #fff3e0;
+}
+
+.bg-high-subtle {
+    background-color: #fbe9e7;
+}
+
+.text-low {
+    color: #1976d2;
+}
+
+.text-medium {
+    color: #f57c00;
+}
+
+.text-high {
+    color: #d32f2f;
+}
+
+.bg-pending-subtle {
+    background-color: #fff3e0;
+}
+
+.bg-in_progress-subtle {
+    background-color: #e3f2fd;
+}
+
+.bg-completed-subtle {
+    background-color: #e8f5e9;
+}
+
+.text-pending {
+    color: #f57c00;
+}
+
+.text-in_progress {
+    color: #1976d2;
+}
+
+.text-completed {
+    color: #388e3c;
+}
+
+.info-card {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.description-content {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    white-space: pre-line;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #28a745, #1e7e34);
+    border: none;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(40,167,69,0.08);
+}
+
+.btn-success:hover {
+    background: linear-gradient(45deg, #1e7e34, #145523);
+    box-shadow: 0 4px 16px rgba(30,126,52,0.12);
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border-color: transparent;
+    color: #fff;
+}
+
+.btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-outline-danger:hover {
+    background: linear-gradient(45deg, #dc3545, #bd2130);
+    border-color: transparent;
+    color: #fff;
+}
+
+/* Responsive tweaks for advanced look */
+@media (max-width: 767px) {
+    .card-body, .info-card, .description-content {
+        padding: 1rem;
+    }
+} 

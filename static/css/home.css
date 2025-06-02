@@ -1,0 +1,170 @@
+/*
+ * Styles for home.html
+ * This file contains all custom styles for the home (welcome) page.
+ * Linked from the template for separation of concerns and maintainability.
+ */
+
+/* Home Page Styles
+ * This file contains styles specific to the home (landing) page.
+ * It includes styles for the welcome section, call-to-action buttons, and feature cards.
+ */
+
+/* Main Container Styles */
+/* Styles for the main home container */
+.container {
+    /* Sets maximum width for content */
+    max-width: 1200px;
+    /* Centers the container */
+    margin: 0 auto;
+    /* Adds vertical padding */
+    padding: 2rem 1rem;
+}
+
+/* Welcome Section Styles */
+/* Styles for the welcome message and heading */
+.display-4 {
+    /* Sets font size */
+    font-size: 2.75rem;
+    /* Sets font weight */
+    font-weight: 700;
+    /* Sets text color */
+    color: #212529;
+}
+
+.lead {
+    /* Sets font size */
+    font-size: 1.25rem;
+    /* Sets font weight */
+    font-weight: 400;
+    /* Sets text color */
+    color: #495057;
+}
+
+/* Call-to-Action Button Styles */
+/* Styles for the main action buttons */
+.btn-primary {
+    /* Sets background color */
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    /* Sets border color */
+    border: none;
+    /* Sets text color */
+    color: #fff;
+    /* Sets font weight */
+    font-weight: 500;
+    /* Sets padding */
+    padding: 0.75rem 2rem;
+    /* Rounds the corners */
+    border-radius: 0.375rem;
+    /* Sets transition */
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    /* Sets background color on hover */
+    background: linear-gradient(45deg, #0056b3, #004494);
+    /* Adds shadow on hover */
+    box-shadow: 0 4px 16px rgba(0,86,179,0.12);
+}
+
+.btn-outline-primary {
+    /* Sets border color */
+    border-color: #007bff;
+    /* Sets text color */
+    color: #007bff;
+    /* Sets font weight */
+    font-weight: 500;
+    /* Sets padding */
+    padding: 0.75rem 2rem;
+    /* Rounds the corners */
+    border-radius: 0.375rem;
+    /* Sets transition */
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-primary:hover {
+    /* Sets background color on hover */
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    /* Sets text color on hover */
+    color: #fff;
+    /* Sets border color on hover */
+    border-color: transparent;
+}
+
+/* Feature Card Styles */
+/* Styles for the feature cards section */
+.feature-card {
+    /* Adds shadow */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    /* Rounds the corners */
+    border-radius: 0.5rem;
+    /* Sets background color */
+    background-color: #fff;
+    /* Sets transition for hover effect */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+    /* Slightly lifts the card on hover */
+    transform: translateY(-4px) scale(1.03);
+    /* Adds shadow on hover */
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+.feature-card i {
+    /* Sets icon size */
+    font-size: 2.5rem;
+    /* Adds margin below */
+    margin-bottom: 0.5rem;
+    /* Sets opacity */
+    opacity: 0.85;
+}
+
+/* Responsive Styles */
+/* Adjusts layout for different screen sizes */
+@media (max-width: 768px) {
+    /* Adjusts card padding on mobile */
+    .feature-card {
+        padding: 1.25rem 0.5rem;
+    }
+    /* Adjusts heading size on mobile */
+    .display-4 {
+        font-size: 2rem;
+    }
+    /* Adjusts button size on mobile */
+    .btn-primary, .btn-outline-primary {
+        padding: 0.5rem 1.25rem;
+    }
+}
+
+.text-center.py-5 {
+    background: linear-gradient(120deg, #f5f6fa 60%, #e3f2fd 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    margin-bottom: 2rem;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+
+.card-title {
+    color: #4a90e2;
+    font-weight: 600;
+}
+
+@media (max-width: 767px) {
+    .text-center.py-5 {
+        padding: 2rem 0.5rem;
+    }
+    .card {
+        margin-bottom: 1rem;
+    }
+} 

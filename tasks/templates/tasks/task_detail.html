@@ -1,0 +1,135 @@
+{% extends 'tasks/base.html' %}
+{% load static %}
+
+{% block title %}{{ task.title }} - Task Manager{% endblock %}
+
+{% block extra_css %}
+<!-- Custom CSS for task detail page styling -->
+<link rel="stylesheet" href="{% static 'css/task_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Main Container -->
+<!-- Provides padding and centers the content on the page -->
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <!-- Content Column: Takes up 8 columns on medium screens and above -->
+        <div class="col-md-8">
+            <!-- Task Detail Card -->
+            <!-- Card with shadow and rounded corners for visual appeal -->
+            <div class="card shadow-lg border-0 rounded-lg">
+                <!-- Card Header -->
+                <!-- Contains the title and action buttons (Edit/Delete) -->
+                <div class="card-header bg-white py-4">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <!-- Page Title -->
+                        <h3 class="mb-0">
+                            <i class="fas fa-tasks text-primary me-2"></i>Task Details
+                        </h3>
+                        <!-- Action Buttons Group -->
+                        <!-- Contains Edit and Delete buttons -->
+                        <div class="btn-group">
+                            <!-- Edit Button -->
+                            <!-- Links to task update view -->
+                            <a href="{% url 'task_update' task.pk %}" class="btn btn-outline-primary">
+                                <i class="fas fa-edit me-2"></i>Edit
+                            </a>
+                            <!-- Delete Button -->
+                            <!-- Links to task delete confirmation view -->
+                            <a href="{% url 'task_delete' task.pk %}" class="btn btn-outline-danger">
+                                <i class="fas fa-trash me-2"></i>Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Body -->
+                <!-- Contains all task information and actions -->
+                <div class="card-body p-4">
+                    <!-- Task Header Section -->
+                    <!-- Contains task title and status badges -->
+                    <div class="task-header mb-4">
+                        <h2 class="mb-3">{{ task.title }}</h2>
+                        <!-- Status Badges -->
+                        <!-- Shows priority and status with appropriate colors -->
+                        <div class="d-flex align-items-center gap-3">
+                            <!-- Priority Badge -->
+                            <!-- Color changes based on priority level -->
+                            <span class="badge bg-{{ task.priority|lower }}-subtle text-{{ task.priority|lower }}">
+                                <i class="fas fa-flag me-1"></i>{{ task.priority|title }}
+                            </span>
+                            <!-- Status Badge -->
+                            <!-- Color changes based on task status -->
+                            <span class="badge bg-{{ task.status|lower }}-subtle text-{{ task.status|lower }}">
+                                <i class="fas fa-circle me-1"></i>{{ task.status|title }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Task Information Section -->
+                    <!-- Contains due date and creation date in a grid layout -->
+                    <div class="task-info mb-4">
+                        <div class="row g-4">
+                            <!-- Due Date Card -->
+                            <!-- Shows when the task is due -->
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <h5 class="text-muted mb-2">
+                                        <i class="fas fa-calendar-alt me-2"></i>Due Date
+                                    </h5>
+                                    <p class="mb-0 fs-5">{{ task.due_date|date:"F d, Y" }}</p>
+                                </div>
+                            </div>
+                            <!-- Creation Date Card -->
+                            <!-- Shows when the task was created -->
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <h5 class="text-muted mb-2">
+                                        <i class="fas fa-clock me-2"></i>Created
+                                    </h5>
+                                    <p class="mb-0 fs-5">{{ task.created_at|date:"F d, Y" }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task Description Section -->
+                    <!-- Contains the detailed task description -->
+                    <div class="task-description mb-4">
+                        <h5 class="text-muted mb-3">
+                            <i class="fas fa-align-left me-2"></i>Description
+                        </h5>
+                        <!-- Description Content -->
+                        <!-- Uses linebreaks filter to preserve formatting -->
+                        <div class="description-content">
+                            {{ task.description|linebreaks|default:"No description provided." }}
+                        </div>
+                    </div>
+
+                    <!-- Task Actions Section -->
+                    <!-- Contains action buttons for task completion and navigation -->
+                    <div class="task-actions">
+                        <div class="d-grid gap-2">
+                            <!-- Complete Task Button -->
+                            <!-- Only shown if task is not already completed -->
+                            {% if task.status != 'completed' %}
+                            <form method="post" action="{% url 'task_complete' task.pk %}" class="d-inline">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-success btn-lg w-100">
+                                    <i class="fas fa-check-circle me-2"></i>Mark as Complete
+                                </button>
+                            </form>
+                            {% endif %}
+                            <!-- Back to Dashboard Button -->
+                            <!-- Returns user to the main dashboard -->
+                            <a href="{% url 'dashboard' %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

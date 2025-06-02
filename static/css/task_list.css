@@ -1,0 +1,286 @@
+/*
+ * Styles for task_list.html
+ * This file contains all custom styles for the task list page.
+ * Linked from the template for separation of concerns and maintainability.
+ */
+
+/* Task List Styles
+ * This file contains styles specific to the task list page.
+ * It includes styles for the task table, action buttons, and badges.
+ */
+
+/* Main Container Styles */
+/* Styles for the main task list container */
+.container {
+    /* Sets maximum width for content */
+    max-width: 1200px;
+    /* Centers the container */
+    margin: 0 auto;
+    /* Adds vertical padding */
+    padding: 2rem 1rem;
+}
+
+/* Task List Card Styles */
+/* Styles for the card containing the task list */
+.card {
+    /* Adds subtle shadow */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    /* Rounds the corners */
+    border-radius: 0.5rem;
+    /* Removes default border */
+    border: none;
+    /* Sets transition for hover effect */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Card Header Styles */
+/* Styles for the card header containing the title and button */
+.card-header {
+    /* Adds padding */
+    padding: 1.5rem;
+    /* Sets background color */
+    background-color: #fff;
+    /* Removes bottom border */
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Card Title Styles */
+/* Styles for the task list title */
+.card-header h4 {
+    /* Sets font size */
+    font-size: 1.5rem;
+    /* Sets font weight */
+    font-weight: 600;
+    /* Sets text color */
+    color: #212529;
+}
+
+/* Table Styles */
+/* Styles for the task table */
+.table {
+    /* Rounds the corners */
+    border-radius: 0.5rem;
+    /* Removes default border */
+    border: none;
+    /* Sets background color */
+    background-color: #fff;
+    /* Adds shadow */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Table Header Styles */
+/* Styles for the table header */
+.table thead th {
+    /* Sets background color */
+    background: #f5f6fa;
+    /* Sets font weight */
+    font-weight: 600;
+    /* Sets text color */
+    color: #4a90e2;
+    /* Adds border */
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* Table Row Hover Styles */
+/* Styles for when table rows are hovered */
+.table-hover tbody tr:hover {
+    /* Sets background color */
+    background: #f0f4fa;
+    /* Sets transition */
+    transition: background 0.2s;
+}
+
+/* Badge Styles */
+/* Styles for priority and status badges */
+.badge {
+    /* Adds padding */
+    padding: 0.5em 0.75em;
+    /* Sets font weight */
+    font-weight: 500;
+    /* Rounds the corners */
+    border-radius: 0.375rem;
+}
+
+/* Action Button Styles */
+/* Styles for edit and delete buttons */
+.btn-outline-primary, .btn-outline-danger {
+    border-width: 2px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background: #007bff;
+    color: #fff;
+}
+.btn-outline-danger:hover {
+    background: #dc3545;
+    color: #fff;
+}
+
+/* Empty State Styles */
+/* Styles for when no tasks are available */
+.text-center {
+    /* Adds padding */
+    padding: 3rem 1rem;
+}
+
+/* Empty State Icon Styles */
+/* Styles for the icon in empty state */
+.fa-3x {
+    /* Sets color */
+    color: #dee2e6;
+    /* Sets margin */
+    margin-bottom: 1rem;
+}
+
+/* Responsive Styles */
+/* Adjusts layout for different screen sizes */
+@media (max-width: 768px) {
+    /* Adjusts card padding on mobile */
+    .card-body {
+        padding: 1rem;
+    }
+    /* Adjusts table font size on mobile */
+    .table {
+        font-size: 0.95rem;
+    }
+    /* Adjusts button size on mobile */
+    .btn {
+        padding: 0.375rem 0.75rem;
+    }
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.bg-low-subtle {
+    background-color: #e3f2fd;
+}
+
+.bg-medium-subtle {
+    background-color: #fff3e0;
+}
+
+.bg-high-subtle {
+    background-color: #fbe9e7;
+}
+
+.text-low {
+    color: #1976d2;
+}
+
+.text-medium {
+    color: #f57c00;
+}
+
+.text-high {
+    color: #d32f2f;
+}
+
+.bg-pending-subtle {
+    background-color: #fff3e0;
+}
+
+.bg-in_progress-subtle {
+    background-color: #e3f2fd;
+}
+
+.bg-completed-subtle {
+    background-color: #e8f5e9;
+}
+
+.text-pending {
+    color: #f57c00;
+}
+
+.text-in_progress {
+    color: #1976d2;
+}
+
+.text-completed {
+    color: #388e3c;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #004494);
+    box-shadow: 0 4px 16px rgba(0,86,179,0.12);
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #28a745, #1e7e34);
+    border: none;
+    padding: 0.25rem 0.75rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(40,167,69,0.08);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.btn-success:hover {
+    background: linear-gradient(45deg, #1e7e34, #145523);
+    box-shadow: 0 4px 16px rgba(30,126,52,0.12);
+}
+
+.form-select {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-select:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    background-color: #fff;
+}
+
+.pagination {
+    margin-bottom: 0;
+}
+
+.page-link {
+    border: none;
+    color: #6c757d;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 5px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.page-link:hover {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.page-item.active .page-link {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+}
+
+.page-item.disabled .page-link {
+    background-color: #f8f9fa;
+    color: #adb5bd;
+}
+
+/* Responsive tweaks for advanced look */
+@media (max-width: 767px) {
+    .task-card {
+        margin-bottom: 1.5rem;
+    }
+    .card-body {
+        padding: 1.25rem;
+    }
+} 

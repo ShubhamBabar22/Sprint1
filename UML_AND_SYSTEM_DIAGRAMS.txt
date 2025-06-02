@@ -1,0 +1,258 @@
+UML and System Diagrams for Django Task Manager Project
+======================================================
+
+This file contains code and explanations for common software diagrams relevant to the Django Task Manager project. You can use the provided code with free online tools to generate and download the diagrams.
+
+Websites to Generate Diagrams for Free
+--------------------------------------
+- Mermaid Live Editor: https://mermaid.live/
+- PlantUML Online Server: https://www.plantuml.com/plantuml/
+- WebSequenceDiagrams: https://www.websequencediagrams.com/
+- Nomnoml (for ER and class diagrams): https://www.nomnoml.com/
+
+
+1. Entity-Relationship (ER) Diagram
+-----------------------------------
+**Explanation:**
+Shows the main entities (User, Task) and their relationships in the database.
+
+```mermaid
+erDiagram
+    USER ||--o{ TASK : owns
+    USER {
+        int id
+        string username
+        string email
+        string password
+    }
+    TASK {
+        int id
+        string title
+        string description
+        string priority
+        string status
+        date due_date
+        date created_at
+        int user_id
+    }
+```
+
+
+2. Class Diagram
+----------------
+**Explanation:**
+Shows the main classes in the backend and their relationships.
+
+```mermaid
+classDiagram
+    class User {
+        +id: int
+        +username: str
+        +email: str
+        +password: str
+    }
+    class Task {
+        +id: int
+        +title: str
+        +description: str
+        +priority: str
+        +status: str
+        +due_date: date
+        +created_at: date
+        +user: User
+    }
+    User "1" -- "*" Task : owns
+```
+
+
+3. Object Diagram
+-----------------
+**Explanation:**
+Shows a snapshot of objects and their relationships at a specific moment.
+
+```mermaid
+classDiagram
+    class User1 {
+        username = "alice"
+    }
+    class Task1 {
+        title = "Finish report"
+        status = "pending"
+    }
+    class Task2 {
+        title = "Buy groceries"
+        status = "completed"
+    }
+    User1 -- Task1
+    User1 -- Task2
+```
+
+
+4. Use Case Diagram
+-------------------
+**Explanation:**
+Shows the main actors (User, Admin) and their interactions with the system.
+
+```mermaid
+%% Mermaid doesn't support use case diagrams natively, but you can use PlantUML:
+@startuml
+left to right direction
+actor User
+actor Admin
+rectangle TaskManager {
+    User -- (Register/Login)
+    User -- (Create/Edit/Delete Task)
+    User -- (View Dashboard)
+    User -- (View Profile)
+    Admin -- (Manage Users)
+    Admin -- (View All Tasks)
+}
+@enduml
+```
+
+
+5. Activity Diagram
+-------------------
+**Explanation:**
+Shows the workflow for a user creating a new task.
+
+```mermaid
+flowchart TD
+    Start((Start))
+    Login[User logs in]
+    Dashboard[Dashboard displayed]
+    ClickCreate[Click 'Create Task']
+    FillForm[Fill in task details]
+    Submit[Submit form]
+    Save[Task saved to DB]
+    ShowList[Show updated task list]
+    End((End))
+
+    Start --> Login --> Dashboard --> ClickCreate --> FillForm --> Submit --> Save --> ShowList --> End
+```
+
+
+6. Sequence Diagram
+-------------------
+**Explanation:**
+Shows the sequence of interactions when a user marks a task as complete.
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Browser
+    participant DjangoView
+    participant Database
+    User->>Browser: Click 'Complete Task'
+    Browser->>DjangoView: POST /complete_task/
+    DjangoView->>Database: Update task status
+    Database-->>DjangoView: Success
+    DjangoView-->>Browser: Redirect to dashboard
+    Browser-->>User: Show updated task list
+```
+
+
+7. Collaboration Diagram
+------------------------
+**Explanation:**
+Shows objects and their links for completing a task (similar to sequence, but as a network).
+
+```mermaid
+flowchart LR
+    User -- clicks --> Browser
+    Browser -- sends request --> DjangoView
+    DjangoView -- updates --> Database
+    Database -- confirms --> DjangoView
+    DjangoView -- response --> Browser
+    Browser -- updates UI --> User
+```
+
+
+8. Component Diagram
+--------------------
+**Explanation:**
+Shows the main software components and their dependencies.
+
+```mermaid
+flowchart TB
+    UserInterface[User Interface (HTML/CSS/JS)]
+    DjangoViews[Django Views]
+    DjangoModels[Django Models]
+    Database[(Database)]
+    StaticFiles[Static Files]
+
+    UserInterface --> DjangoViews
+    DjangoViews --> DjangoModels
+    DjangoModels --> Database
+    UserInterface --> StaticFiles
+```
+
+
+9. Deployment Diagram
+---------------------
+**Explanation:**
+Shows how the system is deployed on hardware (local or server).
+
+```mermaid
+flowchart TB
+    UserDevice[User Device]
+    WebServer[Web Server (Gunicorn/WSGI)]
+    DjangoApp[Django Application]
+    Database[(MySQL/SQLite)]
+    StaticServer[Static File Server]
+
+    UserDevice -- HTTP --> WebServer
+    WebServer -- WSGI --> DjangoApp
+    DjangoApp -- ORM --> Database
+    WebServer -- serves --> StaticServer
+    UserDevice -- HTTP --> StaticServer
+```
+
+
+10. Data Flow Diagram (DFD)
+---------------------------
+**Explanation:**
+Shows the flow of data between user, views, and database for task management.
+
+```mermaid
+flowchart LR
+    User[User]
+    View[Task View]
+    DB[(Database)]
+    User -- inputs --> View
+    View -- reads/writes --> DB
+    DB -- data --> View
+    View -- output --> User
+```
+
+
+---
+**How to Use:**
+- Copy the code for each diagram into the appropriate online tool (see links above).
+- For PlantUML diagrams, use the PlantUML Online Server.
+- For Mermaid diagrams, use Mermaid Live Editor.
+- For sequence diagrams, WebSequenceDiagrams also works well.
+- For ER/class diagrams, Nomnoml is another option.
+
+These diagrams will help you visualize and document the architecture and workflows of your Django Task Manager project. 
+
+Free Tools for Generating Diagrams
+1. Mermaid Diagrams
+Mermaid Live Editor (https://mermaid.live/)
+Free, no login required. Paste your Mermaid code, view, and export diagrams as PNG/SVG.
+Kroki (https://kroki.io/)
+Free, supports Mermaid, PlantUML, and more. Paste code and get instant diagrams.
+StackEdit (https://stackedit.io/)
+Free Markdown editor with Mermaid support.
+2. PlantUML Diagrams
+PlantUML Online Server (https://www.plantuml.com/plantuml/)
+Free, no login required. Paste PlantUML code and download diagrams.
+3. Sequence Diagrams
+WebSequenceDiagrams (https://www.websequencediagrams.com/)
+Free for basic diagrams (PNG export).
+4. ER/Class Diagrams
+Nomnoml (https://www.nomnoml.com/)
+Free, no login required.
+5. VS Code Extensions
+Markdown Preview Mermaid Support
+Free, lets you preview Mermaid diagrams directly in VS Code.

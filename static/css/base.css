@@ -1,0 +1,154 @@
+/*
+ * Global styles for all pages (base.html)
+ * 
+ * This stylesheet contains the core styles used throughout the application.
+ * It defines the base look and feel, including:
+ * - Color scheme and variables
+ * - Typography
+ * - Layout components
+ * - Animations and transitions
+ * - Responsive design rules
+ */
+
+/* CSS Custom Properties (Variables)
+ * These variables define the application's color scheme and can be
+ * easily modified to change the entire look of the application.
+ */
+:root {
+    --primary-color: #4a90e2;    /* Main brand color for headers and buttons */
+    --secondary-color: #f5f6fa;  /* Light background color */
+    --accent-color: #2ecc71;     /* Success and action color */
+    --danger-color: #e74c3c;     /* Error and warning color */
+    --warning-color: #f1c40f;    /* Caution and attention color */
+}
+
+/* Base Body Styles
+ * Sets up the main layout and animated background
+ */
+body {
+    /* Animated gradient background for a modern look */
+    min-height: 100vh;  /* Ensures footer stays at bottom */
+    background: linear-gradient(120deg, #f5f6fa 60%, #e3f2fd 100%);
+    background-size: 200% 200%;
+    animation: gradientMove 8s ease-in-out infinite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background Animation
+ * Creates a subtle moving gradient effect
+ */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Page Load Animation
+ * Fades in content when page loads
+ */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Navigation Bar Styles
+ * Modern, clean design with hover effects
+ */
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.4s;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    text-shadow: 0 2px 8px rgba(74,144,226,0.15);
+}
+
+/* Card Component Styles
+ * Modern card design with hover effects
+ */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 8px 32px rgba(74,144,226,0.10);
+}
+
+/* Button Styles
+ * Gradient background with hover effects
+ */
+.btn-primary {
+    background: linear-gradient(45deg, #4a90e2, #0056b3);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(74,144,226,0.08);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #003366);
+    box-shadow: 0 4px 16px rgba(0,86,179,0.12);
+}
+
+/* Alert Component Styles
+ * Clean, modern alert design
+ */
+.alert {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-size: 1rem;
+}
+
+/* Footer Styles
+ * Fixed at bottom with subtle shadow
+ */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    margin-top: 50px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+}
+
+/* Utility Classes
+ * Common spacing and layout helpers
+ */
+.mt-5 { margin-top: 3rem !important; }
+.mb-0 { margin-bottom: 0 !important; }
+
+/* Responsive Design
+ * Adjusts layout for mobile devices
+ */
+@media (max-width: 767px) {
+    .navbar, .footer {
+        border-radius: 0;  /* Remove rounded corners on mobile */
+    }
+    .card {
+        margin-bottom: 1rem;  /* Add spacing between cards on mobile */
+    }
+} 

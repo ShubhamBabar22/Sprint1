@@ -1,0 +1,99 @@
+{% extends 'tasks/base.html' %}
+{% load static %}
+
+{# Page title for browser tab #}
+{% block title %}My Tasks - Task Manager{% endblock %}
+
+{% block content %}
+<!-- Main Container -->
+<!-- Provides padding and centers the content on the page -->
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <!-- Task List Column -->
+        <!-- Contains the list of tasks for the user -->
+        <div class="col-lg-10">
+            <!-- Task List Card -->
+            <!-- Card containing the list of tasks with shadow and rounded corners -->
+            <div class="card shadow-sm">
+                <!-- Card Header -->
+                <!-- Contains the title and create task button -->
+                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0">
+                        <i class="fas fa-tasks text-primary me-2"></i>My Tasks
+                    </h4>
+                    <a href="{% url 'task_create' %}" class="btn btn-primary">
+                        <i class="fas fa-plus me-2"></i>Create Task
+                    </a>
+                </div>
+
+                <!-- Card Body -->
+                <!-- Contains the actual list of tasks -->
+                <div class="card-body p-4">
+                    <!-- Task List Table -->
+                    <!-- Table displaying all tasks with their details -->
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                    <th>Due Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for task in tasks %}
+                                <!-- Task Row -->
+                                <!-- Displays details for each task -->
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'task_detail' task.pk %}" class="text-decoration-none">
+                                            {{ task.title }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-{{ task.priority }}-subtle text-{{ task.priority }}">
+                                            {{ task.priority|title }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-{{ task.status }}-subtle text-{{ task.status }}">
+                                            {{ task.status|title }}
+                                        </span>
+                                    </td>
+                                    <td>{{ task.due_date|date:"M d, Y" }}</td>
+                                    <td>
+                                        <!-- Action Buttons: Edit and Delete -->
+                                        <a href="{% url 'task_edit' task.pk %}" class="btn btn-sm btn-outline-primary me-2">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="{% url 'task_confirm_delete' task.pk %}" class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <!-- Empty State Row -->
+                                <!-- Shown when no tasks are available -->
+                                <tr>
+                                    <td colspan="5" class="text-center py-4">
+                                        <i class="fas fa-clipboard-list fa-3x text-muted mb-3"></i>
+                                        <p class="text-muted">No tasks found. Create your first task!</p>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<!-- Link to external CSS for task_list.html -->
+<link rel="stylesheet" href="{% static 'css/task_list.css' %}">
+{% endblock %} 

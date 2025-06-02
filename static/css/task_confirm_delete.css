@@ -1,0 +1,135 @@
+/*
+ * Styles for task_confirm_delete.html
+ * This file contains all custom styles for the task delete confirmation page.
+ * Linked from the template for separation of concerns and maintainability.
+ */
+
+/* Task Confirm Delete Styles
+ * This file contains styles specific to the task delete confirmation page.
+ * It includes styles for the confirmation card, buttons, and warning icons.
+ */
+
+/* Main Container Styles */
+/* Styles for the main confirmation container */
+.container {
+    /* Sets maximum width for content */
+    max-width: 1200px;
+    /* Centers the container */
+    margin: 0 auto;
+    /* Adds vertical padding */
+    padding: 2rem 1rem;
+}
+
+/* Confirmation Card Styles */
+/* Styles for the card containing the confirmation message */
+.card {
+    /* Adds subtle shadow */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    /* Rounds the corners */
+    border-radius: 0.5rem;
+    /* Removes default border */
+    border: none;
+    /* Sets transition for hover effect */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Card Header Styles */
+/* Styles for the card header containing the title */
+.card-header {
+    /* Adds padding */
+    padding: 1.5rem;
+    /* Sets background color */
+    background-color: #fff;
+    /* Removes bottom border */
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Card Title Styles */
+/* Styles for the delete title */
+.card-header h4 {
+    /* Sets font size */
+    font-size: 1.5rem;
+    /* Sets font weight */
+    font-weight: 600;
+    /* Sets text color */
+    color: #dc3545;
+}
+
+/* Card Body Styles */
+/* Styles for the card body containing the confirmation message */
+.card-body {
+    /* Adds padding */
+    padding: 2rem;
+}
+
+/* Confirmation Message Styles */
+/* Styles for the confirmation message text */
+.fs-5 {
+    /* Sets font size */
+    font-size: 1.15rem;
+    /* Sets font weight */
+    font-weight: 500;
+}
+
+/* Button Styles */
+/* Styles for the delete and cancel buttons */
+.btn-danger {
+    /* Sets background color */
+    background: linear-gradient(45deg, #dc3545, #b52a37);
+    /* Sets border color */
+    border: none;
+    /* Sets text color */
+    color: #fff;
+    /* Sets font weight */
+    font-weight: 500;
+    /* Sets padding */
+    padding: 0.5rem 1.25rem;
+    /* Rounds the corners */
+    border-radius: 0.375rem;
+    /* Sets transition */
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-danger:hover {
+    /* Sets background color on hover */
+    background: linear-gradient(45deg, #b52a37, #dc3545);
+    /* Adds shadow on hover */
+    box-shadow: 0 4px 16px rgba(220,53,69,0.12);
+}
+
+.btn-outline-secondary {
+    /* Sets border color */
+    border-color: #6c757d;
+    /* Sets text color */
+    color: #6c757d;
+    /* Sets font weight */
+    font-weight: 500;
+    /* Sets padding */
+    padding: 0.5rem 1.25rem;
+    /* Rounds the corners */
+    border-radius: 0.375rem;
+    /* Sets transition */
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-secondary:hover {
+    /* Sets background color on hover */
+    background: linear-gradient(45deg, #6c757d, #5a6268);
+    /* Sets text color on hover */
+    color: #fff;
+    /* Sets border color on hover */
+    border-color: transparent;
+}
+
+/* Responsive Styles */
+/* Adjusts layout for different screen sizes */
+@media (max-width: 768px) {
+    /* Adjusts card padding on mobile */
+    .card-body {
+        padding: 1rem;
+    }
+    /* Adjusts button size on mobile */
+    .btn {
+        padding: 0.375rem 0.75rem;
+    }
+} 

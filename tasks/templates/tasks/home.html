@@ -1,0 +1,72 @@
+{% extends 'tasks/base.html' %}
+{% load static %}
+
+{# Page title for browser tab #}
+{% block title %}Home - Task Manager{% endblock %}
+
+{% block extra_css %}
+<!-- Link to external CSS for home.html -->
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Main Container -->
+<!-- Provides padding and centers the content on the page -->
+<div class="container py-5">
+    <div class="row justify-content-center align-items-center min-vh-80">
+        <!-- Home Content Column -->
+        <!-- Contains the welcome message and call-to-action buttons -->
+        <div class="col-md-8 text-center">
+            <!-- Welcome Section -->
+            <h1 class="display-4 mb-4">
+                <i class="fas fa-tasks text-primary me-2"></i>Welcome to Task Manager
+            </h1>
+            <p class="lead mb-5">
+                Organize, track, and complete your tasks efficiently with our intuitive task management system.
+            </p>
+            <!-- Call-to-Action Buttons -->
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'dashboard' %}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-columns me-2"></i>Go to Dashboard
+                    </a>
+                    <a href="{% url 'profile' %}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-user me-2"></i>Profile
+                    </a>
+                {% else %}
+                    <a href="{% url 'register' %}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-user-plus me-2"></i>Get Started
+                    </a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-sign-in-alt me-2"></i>Login
+                    </a>
+                {% endif %}
+            </div>
+            <!-- Features Section -->
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card p-4 h-100 shadow-sm rounded">
+                        <i class="fas fa-check-circle fa-2x text-success mb-3"></i>
+                        <h5>Track Progress</h5>
+                        <p class="text-muted">Monitor your task completion and stay on top of deadlines.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card p-4 h-100 shadow-sm rounded">
+                        <i class="fas fa-bolt fa-2x text-warning mb-3"></i>
+                        <h5>Prioritize Tasks</h5>
+                        <p class="text-muted">Set priorities and focus on what matters most each day.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card p-4 h-100 shadow-sm rounded">
+                        <i class="fas fa-users fa-2x text-info mb-3"></i>
+                        <h5>Collaborate</h5>
+                        <p class="text-muted">Work together with your team and achieve more, together.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
