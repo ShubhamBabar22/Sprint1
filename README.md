@@ -1,6 +1,6 @@
 # Task Manager Application
 
-A simple yet elegant task management application built with Python Flask, SQLite, HTML, and CSS.
+A simple yet elegant task management application built with Python Django, MYSQL, HTML, and CSS.
 
 ## Features
 
